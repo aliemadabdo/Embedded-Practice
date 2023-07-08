@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 int main(void) {
-	printf("Hello from main function\n\n");
+ 	printf("Hello from main function\n\n");
 
 	/* LAB 5
 	 * A program to print numbers from 1 to 9 as triangle with nested for loop */
@@ -22,6 +22,5 @@ int main(void) {
 		printf("\n");
 	}
 	return 0;
-
-
 }
+
