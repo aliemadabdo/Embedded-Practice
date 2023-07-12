@@ -9,7 +9,7 @@
  */
 
 #include <stdio.h>
-#include <String.h>
+#include <string.h>
 
 int main(void) {
 
