@@ -16,7 +16,6 @@ int main(void) {
 	char *backPtr = str, *spacePtr = str, *frontPtr = str;
 
 	do{
-
 		while((*(frontPtr+1) != ' ') && (*(frontPtr+1) != '\0')){
 			frontPtr++;
 		}
