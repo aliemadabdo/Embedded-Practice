@@ -8,6 +8,14 @@ This repository contains resources for the Embedded Systems Diploma, instructed 
 
 - Unit 1: Diploma Prerequisites
 - Unit 2: C Programming
+    1. "Intro to Embedded Systems"
+    2. "Git"
+    3. "C Basics"
+    4. "Arrays & Strings"
+    5. "Functions"
+    6. "Struct, Union, Enum"
+    7. "Macros"
+    8. "Pointers"
 - Unit 3: Embedded C
 - Unit 4: System Architect
 - Unit 5: First Term Projects
