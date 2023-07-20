@@ -40,8 +40,3 @@ This repository contains resources for the Embedded Systems Diploma, instructed 
 ## Getting Started
 
 To access the labs and projects for each unit, please refer to the respective subdirectories within this repository. Each unit directory will contain the necessary files and instructions for completing the associated tasks.
-
-## Contributors
-
-- Eng. Keroles Shenouda
-
