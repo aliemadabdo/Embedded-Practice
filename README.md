@@ -15,7 +15,7 @@ This repository contains resources for the Embedded Systems Diploma, instructed 
     5. "Functions"
     6. "Struct, Union, Enum"
     7. "Macros"
-    8. "Pointers"
+    8 Pointers (you can check additional frequently used codes here)
 - Unit 3: Embedded C
 - Unit 4: System Architect
 - Unit 5: First Term Projects
