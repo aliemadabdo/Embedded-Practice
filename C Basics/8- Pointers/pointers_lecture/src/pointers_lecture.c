@@ -2,7 +2,7 @@
  ============================================================================
  Name        : pointers_lecture.c
  Author      : Ali Emad
- Version     :
+ Version     : IMPORTNAT
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
