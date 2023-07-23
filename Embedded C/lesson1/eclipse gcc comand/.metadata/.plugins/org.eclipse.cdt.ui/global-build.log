@@ -1,0 +1,9 @@
+16:05:37 **** Rebuild of configuration Debug for project building_process ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\building_process.o" "..\\src\\building_process.c" 
+gcc -o building_process.exe "src\\building_process.o" 
+Info: Nothing to build for building_process
+16:11:55 **** Incremental Build of configuration Debug for project building_process ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\building_process.o" "..\\src\\building_process.c" 
+gcc -o building_process.exe "src\\building_process.o" 

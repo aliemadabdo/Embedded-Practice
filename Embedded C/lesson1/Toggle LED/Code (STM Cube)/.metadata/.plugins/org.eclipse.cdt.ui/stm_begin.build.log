@@ -1,0 +1,10 @@
+00:08:57 **** Incremental Build of configuration Debug for project stm_begin ****
+make -j4 all 
+arm-none-eabi-size   stm_begin.elf 
+   text	   data	    bss	    dec	    hex	filename
+    580	      8	   1568	   2156	    86c	stm_begin.elf
+Finished building: default.size.stdout
+ 
+
+00:08:57 Build Finished. 0 errors, 0 warnings. (took 194ms)
+
