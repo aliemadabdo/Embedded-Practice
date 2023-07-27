@@ -1,0 +1,34 @@
+
+.igot.plt       0x0000000002000008        0x0 load address 0x000000000800014b
+ .igot.plt      0x0000000002000008        0x0 main.o
+
+.bss            0x0000000002000008     0x1003 load address 0x000000000800014b
+                0x0000000002000008                _S_bss = .
+ *(.bss)
+ .bss           0x0000000002000008        0x0 main.o
+ .bss           0x0000000002000008        0x0 startup.o
+                0x0000000002000008                . = ALIGN (0x4)
+                0x0000000002000008                _E_bss = .
+                0x0000000002000008                . = ALIGN (0x4)
+                0x0000000002001008                . = (. + 0x1000) *fill*         0x0000000002000008     0x1000
+                0x0000000002001008                _stack_top = .
+ COMMON         0x0000000002001008        0x3 main.o
+                0x0000000002001008                un_init_vars
+LOAD main.o
+LOAD startup.o
+OUTPUT(cortex_m3.elf elf32-littlearm)
+
+.comment        0x0000000000000000       0x7b
+ .comment       0x0000000000000000       0x7b main.o
+                                         0x7c (size before relaxing)
+ .comment       0x000000000000007b       0x7c startup.o
+
+.ARM.attributes
+                0x0000000000000000       0x33
+ .ARM.attributes
+                0x0000000000000000       0x33 main.o
+ .ARM.attributes
+                0x0000000000000033       0x33 startup.o
+arm-none-eabi-objcopy.exe -O binary cortex_m3.elf cortex_m3.bin
+build is Done
+

@@ -54,12 +54,13 @@ int main(void) {
 	GPIOA_CRH &= 0xff0fffff;
 	GPIOA_CRH |= 0x00200000; 
 
-
+	un_init_vars[0] = (char)100;
+	un_init_vars[0] = (char)200;
 	while(1){
 		R_ODR->Pin.P_13 = 1;
-		for(int i=0; i<5000; i++);
+		for(int i=0; i<(int)un_init_vars[0]; i++);
 		R_ODR->Pin.P_13 = 0;
-		for(int i=0; i<5000; i++);
+		for(int i=0; i<(int)un_init_vars[1]; i++);
 //Other solution
 //		GPIOA_ODR ^= 1<<13;
 //		for(int i=0; i<5000; i++);

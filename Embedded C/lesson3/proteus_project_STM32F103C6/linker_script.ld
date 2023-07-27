@@ -29,8 +29,8 @@ SECTIONS
 		. = ALIGN(4) ;
 		_E_bss = . ;
 		
+		. = ALIGN(4) ;
+		. = . + 0x1000 /* size of stack */ ;
+		_stack_top = . ;
 	}> sram /* always in ram */
-	. = ALIGN(4) ;
-	. = . + 0x1000 /* size of stack */ ;
-	_stack_top = . ;
 }

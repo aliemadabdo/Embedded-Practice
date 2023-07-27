@@ -24,13 +24,8 @@ SECTIONS
 	}> sram AT>flash /* >VMA AT>LMA    AT: At loading */
 	
 	.bss : {
-		_S_bss = . ;
+		_S_BSS = . ;
 		*(.bss)
-		. = ALIGN(4) ;
-		_E_bss = . ;
-		
+		_E_BSS = . ;
 	}> sram /* always in ram */
-	. = ALIGN(4) ;
-	. = . + 0x1000 /* size of stack */ ;
-	_stack_top = . ;
 }

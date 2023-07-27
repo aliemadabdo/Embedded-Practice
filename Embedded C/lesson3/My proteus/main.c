@@ -42,7 +42,7 @@ typedef union{
 volatile R_ODR_t* R_ODR = (volatile R_ODR_t*)(GPIOA_BASE + 0x0C);
 unsigned char g_variables[3] = {1,2,3};
 unsigned char const const_variables[3] = {1,2,3};
-volatile unsigned char un_init_vars[3];
+volatile unsigned char hamo[3];
 
 void H_fault_Handler(void){
 	
@@ -53,7 +53,6 @@ int main(void) {
 	RCC_APB2ENR |= RCC_IOPAEN;
 	GPIOA_CRH &= 0xff0fffff;
 	GPIOA_CRH |= 0x00200000; 
-
 
 	while(1){
 		R_ODR->Pin.P_13 = 1;
