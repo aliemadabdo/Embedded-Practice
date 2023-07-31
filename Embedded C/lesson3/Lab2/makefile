@@ -13,7 +13,7 @@
 	
 #>>>SHAPE 2: incremental build
 
-#CC for compiler or tool chain
+#CC for Cross tool Chain
 CC=arm-none-eabi-
 
 #CFLAGS for const commands
