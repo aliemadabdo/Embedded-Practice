@@ -17,7 +17,15 @@ This repository contains resources for the Embedded Systems Diploma, instructed 
     7. "Macros"
     8. Pointers (you can check additional frequently used codes here)
 - Unit 3: Embedded C
+    1. startup, linker, make, GDB.
+    2. LAB 1 on ARM versatilepb
+    3. LAB 2 on ARM STM32F103C6
+    4. LAB 3 on ARM tiva c tm4c123gh6pm
+    5. Commercial debuggers and dynamic allocation
 - Unit 4: System Architect
+    1. Stack, Queue, Linked list
+    2. ..
+    3. ..
 - Unit 5: First Term Projects
 
 ### Second Term
