@@ -11,21 +11,35 @@
 #include <stdio.h>
 #include "FIFO.h"
 
-#define BATCH_ENQUEUE_1 6
+#define BATCH_ENQUEUE_1 9
 #define BATCH_DEQUEUE_1 5
 #define BATCH_ENQUEUE_2 3
-#define BATCH_DEQUEUE_2 5
+#define BATCH_DEQUEUE_2 7
 
 int main(void){
 	printf("\n\t\t\tWelcome to FIFO circular buffer \n");
 
-	FIFO_Cbuffer bufX;
-	init_FIFO(&bufX);
-	printf("Queue initialized. \n");
+	element_type UART_buffer[FIFO_LENGTH];
+	FIFO_Cbuffer_t bufX;
+
+	switch( init_FIFO(&bufX, UART_buffer) ){
+			case NULL_STATE:{
+				printf("ERROR?: Invalid buffer or structure. \n");
+				break;
+			}
+			case NO_ERROR:{
+				printf("Queue initialized successfully. \n");
+				break;
+			}
+	}
+
 	printf("Queue base at 0x%p \nQueue tail at 0x%p \nQueue head at 0x%p \n",bufX.base ,bufX.tail ,bufX.head);
 
-	for(int i=0; i<BATCH_ENQUEUE_1; i++){
-		switch(FIFO_enqueue(&bufX, i+99)){
+	FIFO_print(&bufX);
+
+//BATCH_ENQUEUE_1
+	for(element_type i=0; i<BATCH_ENQUEUE_1; i++){
+		switch(FIFO_enqueue(&bufX, (element_type)(i+99) )){
 			case NULL_STATE:{
 				printf("ERROR?: Invalid FIFO initialization. \n");
 				break;
@@ -40,7 +54,9 @@ int main(void){
 			}
 		}
 	}
+	FIFO_print(&bufX);
 
+//BATCH_DEQUEUE_1
 	for(int i=0; i<BATCH_DEQUEUE_1; i++){
 		switch(FIFO_dequeue(&bufX)){
 			case NULL_STATE:{
@@ -53,16 +69,18 @@ int main(void){
 			}
 			default:{
 				if(bufX.base == bufX.tail)
-					printf("%d Dequeued, Queue tail at 0x%p \n",*(bufX.tail + FIFO_LENGTH) ,bufX.tail);
+					printf("%d Dequeued, Queue tail at 0x%p \n",*(bufX.tail + FIFO_LENGTH - 1) ,bufX.tail);
 				else
 					printf("%d Dequeued, Queue tail at 0x%p \n",*(bufX.tail - 1) ,bufX.tail);
 				break;
 			}
 		}
 	}
+	FIFO_print(&bufX);
 
-	for(int i=0; i<BATCH_ENQUEUE_2; i++){
-		switch(FIFO_enqueue(&bufX, i+99)){
+//BATCH_ENQUEUE_2
+	for(element_type i=0; i<BATCH_ENQUEUE_2; i++){
+		switch(FIFO_enqueue(&bufX, (element_type)(i+99) )){
 			case NULL_STATE:{
 				printf("ERROR?: Invalid FIFO initialization. \n");
 				break;
@@ -77,7 +95,9 @@ int main(void){
 			}
 		}
 	}
+	FIFO_print(&bufX);
 
+//BATCH_DEQUEUE_2
 	for(int i=0; i<BATCH_DEQUEUE_2; i++){
 		switch(FIFO_dequeue(&bufX)){
 			case NULL_STATE:{
@@ -90,13 +110,16 @@ int main(void){
 			}
 			default:{
 				if(bufX.base == bufX.tail)
-					printf("%d Dequeued, Queue tail at 0x%p \n",*(bufX.tail + FIFO_LENGTH) ,bufX.tail);
+					printf("%d Dequeued, Queue tail at 0x%p \n",*(bufX.tail + FIFO_LENGTH - 1) ,bufX.tail);
 				else
 					printf("%d Dequeued, Queue tail at 0x%p \n",*(bufX.tail - 1) ,bufX.tail);
 				break;
 			}
 		}
 	}
+	FIFO_print(&bufX);
+
+	printf("===========================Done Testing========================");
 
 	return 0;
 }

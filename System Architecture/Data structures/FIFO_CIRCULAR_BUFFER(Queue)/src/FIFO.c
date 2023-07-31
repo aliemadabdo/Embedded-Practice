@@ -5,17 +5,22 @@
  *      Author: ALI EMAD
  */
 #include "FIFO.h"
+#include <stdio.h>
 
-void init_FIFO (FIFO_Cbuffer* buf){
-	static uint_t arr[FIFO_LENGTH];
+FIFO_state init_FIFO (FIFO_Cbuffer_t* buf, element_type* UART_buffer){
 
-	buf->base =arr;
-	buf->tail =arr;
-	buf->head =arr;
+	if (UART_buffer == NULL)
+		return NULL_STATE;
+
+	buf->base = UART_buffer;
+	buf->tail = UART_buffer;
+	buf->head = UART_buffer;
 	buf->size = 0;
+
+	return NO_ERROR;
 }
 
-FIFO_state FIFO_enqueue(FIFO_Cbuffer* buf, int element){
+FIFO_state FIFO_enqueue(FIFO_Cbuffer_t* buf, element_type element){
 	//check valid buffer
 	if (buf->base == NULL)
 		return NULL_STATE;
@@ -24,7 +29,7 @@ FIFO_state FIFO_enqueue(FIFO_Cbuffer* buf, int element){
 		return FULL;
 
 	//circularity
-	if (buf->head == (buf->base + FIFO_LENGTH)){
+	if (buf->head == (buf->base + FIFO_LENGTH - 1)){
 		*(buf->head) = element;
 		buf->head = buf->base;
 		buf->size++;
@@ -38,7 +43,7 @@ FIFO_state FIFO_enqueue(FIFO_Cbuffer* buf, int element){
 	return NO_ERROR;
 }
 
-int FIFO_dequeue(FIFO_Cbuffer* buf){
+element_type FIFO_dequeue(FIFO_Cbuffer_t* buf){
 	//check valid buffer
 	if (buf->base == NULL)
 		return NULL_STATE;
@@ -47,11 +52,12 @@ int FIFO_dequeue(FIFO_Cbuffer* buf){
 		return EMPTY;
 
 	//circularity
-		if (buf->tail == (buf->base + FIFO_LENGTH)){
-			buf->tail = buf->base;
-			buf->size--;
-			return *(buf->tail + FIFO_LENGTH);
-		}
+	if (buf->tail == (buf->base + FIFO_LENGTH - 1)){
+		buf->tail = buf->base;
+		buf->size--;
+
+		return *(buf->tail + FIFO_LENGTH - 1);
+	}
 
 	buf->tail++;
 	buf->size--;
@@ -59,7 +65,7 @@ int FIFO_dequeue(FIFO_Cbuffer* buf){
 	return *(buf->tail - 1);
 }
 
-FIFO_state FIFO_is_empty(FIFO_Cbuffer* buf){
+FIFO_state FIFO_is_empty(FIFO_Cbuffer_t* buf){
 	//check valid buffer
 	if (buf->base == NULL)
 		return NULL_STATE;
@@ -70,7 +76,7 @@ FIFO_state FIFO_is_empty(FIFO_Cbuffer* buf){
 	return NOT_EMPTY;
 }
 
-FIFO_state FIFO_is_full(FIFO_Cbuffer* buf){
+FIFO_state FIFO_is_full(FIFO_Cbuffer_t* buf){
 	//check valid buffer
 	if (buf->base == NULL)
 		return NULL_STATE;
@@ -81,3 +87,26 @@ FIFO_state FIFO_is_full(FIFO_Cbuffer* buf){
 	return NOT_FULL;
 }
 
+void FIFO_print(FIFO_Cbuffer_t* buf){
+	if(buf->base == NULL)
+		return;
+
+	element_type* temp = buf->tail;
+	int loc_num = 0;
+
+	printf("\n\t\t\t FIFO Content\n");
+
+	for(int i=0; i<buf->size; i++){
+		loc_num = (temp - buf->base) ;
+
+		printf("location[%d] = %d , address : 0x%p \n",loc_num, *temp, temp );
+
+		if ( temp == (buf->base + FIFO_LENGTH - 1) )
+			temp = buf->base;
+		else
+			temp++;
+	}
+
+	printf("\t\t------DONE Printing----\n");
+
+}
