@@ -26,14 +26,24 @@ enum{
 	ADD_STUDENT,
 	DELET_STUDENT,
 	VIEW_STUDENTS,
-	DELET_ALL
+	DELET_ALL,
+	FIND_ELEMENT,
+	GET_LENGTH,
+	GET_MIDDLE,
+	REVERSE_LIST,
+	LOOP_DETECTION
 };
 
-void add(struct Sstudent* ptr_student);
+
 void add_student(void);
 void delete_student(void);
 void print_list();
-void delete(int ID);
 void delete_all(void);
-
+void findElement();
+void getLength();
+void getMiddle();
+void reverseList();
+void loopDetection();
+void add(struct Sstudent* ptr_student);
+void delete(int ID);
 #endif /* LINKED_LIST_H_ */

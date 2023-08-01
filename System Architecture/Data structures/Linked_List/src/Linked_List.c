@@ -1,11 +1,13 @@
+/* Future plans:
+ * 1-check for duplicated IDs  */
+
 #include "Linked_List.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "stdio.h"
+#include "stdlib.h"
 
 struct Sstudent* g_p_base = NULL;
 
 void add_student(void){
-	printf("You chose to add a student.\n");
 
 	//allocate a new space to structure of type Sstudent
 	struct Sstudent* p_student = (struct Sstudent*)malloc( sizeof(struct Sstudent) );
@@ -43,7 +45,6 @@ void add(struct Sstudent* ptr_student){
 
 void delete_student(void){
 	int ID;
-	printf("You chose to delete a student.\n");
 
 	printf("Enter student ID to be deleted: .\n");
 	fflush(stdout);
@@ -79,6 +80,7 @@ void delete(int ID){
 
 	prev_temp->next = temp->next;
 	temp->next = NULL;
+	free(temp);
 }
 
 void print_list(){
@@ -105,4 +107,33 @@ void print_list(){
 void delete_all(void){
 	g_p_base = NULL;
 }
+
+void findElement(){
+
+}
+
+void getLength(){
+
+}
+
+void getMiddle(){
+
+}
+
+void reverseList(){
+
+}
+
+void loopDetection(){
+
+}
+
+
+
+
+
+
+
+
+
 
