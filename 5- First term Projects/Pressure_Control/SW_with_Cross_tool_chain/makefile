@@ -44,7 +44,7 @@ all : pressureController.bin
 	$(CC)gcc.exe $(INCS) $(CFLAGS) $< -o $@
 	
 $(project_name).elf : $(OBJ)
-	$(CC)ld.exe -T Linker_script.ld $(LIBS) $(OBJ) -o $@ -MAP=mapFile.map
+	$(CC)ld.exe -T Linker_script.ld $(LIBS) $(OBJ) -o $@ -Map mapFile.map
 
 $(project_name).bin: $(project_name).elf
 	$(CC)objcopy -O binary $< $@

@@ -1,0 +1,30 @@
+/c/Users/Mega Store/Documents/GitHub/Embedded-Practice/5- First term Projects/Pressure_Control/SW_with_Cross_tool_chain
+a.txt
+driver.c
+driver.h
+driver.o
+Linker_script.ld
+log.sh
+main.c
+main.o
+makefile
+mapFile.map
+pressureController.bin
+pressureController.elf
+startup.c
+startup.o
+############list of current files###########
+a.txt
+driver.c
+driver.h
+driver.o
+Linker_script.ld
+log.sh
+main.c
+main.o
+makefile
+mapFile.map
+pressureController.bin
+pressureController.elf
+startup.c
+startup.o
