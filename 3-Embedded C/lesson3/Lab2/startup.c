@@ -16,7 +16,8 @@
  void NMI_Handler(void) __attribute__ ((weak,alias ("Default_Handler")));
  void H_fault_Handler(void) __attribute__ ((weak, alias("Default_Handler")));
 
- 
+__attribute__( weak ) ,__attribute__( (weak,alias(Default_Handler)) ) ,
+__attribute__(section(".vectors"))
  uint32_t vectors[] __attribute__((section(".vectors"))) = {
 	(uint32_t) &_stack_top,
 	(uint32_t) &Reset_Handler,
