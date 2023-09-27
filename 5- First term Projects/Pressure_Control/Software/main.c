@@ -13,16 +13,23 @@
 
 #include "driver.h"
 
+int threshold = 20;
+int pressure = 0;
+
+enum alarm_state{
+	OFF, ON
+};
+
 int main (){
 	GPIO_INITIALIZATION();
-	Set_Alarm_actuator(0);
+	Set_Alarm_actuator(OFF);
 
 	while (1)
-	{
-		if (getPressureVal() > 20){
-			Set_Alarm_actuator(1);
+	{	pressure = getPressureVal();
+		if (pressure > threshold){
+			Set_Alarm_actuator(ON);
 			Delay(6000);
-			Set_Alarm_actuator(0);
+			Set_Alarm_actuator(OFF);
 		}
 	}
 }

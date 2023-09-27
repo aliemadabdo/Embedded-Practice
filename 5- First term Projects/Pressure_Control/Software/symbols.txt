@@ -1,0 +1,141 @@
+############Startup.c symbols###########
+         U _E_bss
+         U _E_data
+         U _E_text
+         U _S_bss
+         U _S_data
+         U _stack_pointer
+00000098 T Default_Handler
+00000098 W H_fault_Handler
+         U main
+00000098 W NMI_Handler
+00000000 T reset_Handler
+00000000 D vectors
+############main.c symbols###########
+         U Delay
+         U getPressureVal
+         U GPIO_INITIALIZATION
+00000000 T main
+         U Set_Alarm_actuator
+############Driver.c Symbols###########
+00000000 T Delay
+00000020 T getPressureVal
+00000074 T GPIO_INITIALIZATION
+00000038 T Set_Alarm_actuator
+############all symbols###########
+02000000 T _E_bss
+02000000 T _E_data
+080001a8 T _E_text
+02000000 T _S_bss
+02000000 T _S_data
+02001000 T _stack_pointer
+0800019c T Default_Handler
+08000010 T Delay
+08000030 T getPressureVal
+08000084 T GPIO_INITIALIZATION
+0800019c W H_fault_Handler
+080000d4 T main
+0800019c W NMI_Handler
+08000104 T reset_Handler
+08000048 T Set_Alarm_actuator
+08000000 T vectors
+############'nm' utility is not not valid with .bin files###########
+############END###########
+############Startup.c symbols###########
+         U _E_bss
+         U _E_data
+         U _E_text
+         U _S_bss
+         U _S_data
+         U _stack_pointer
+00000098 T Default_Handler
+00000098 W H_fault_Handler
+         U main
+00000098 W NMI_Handler
+00000000 T reset_Handler
+00000000 D vectors
+############main.c symbols###########
+         U Delay
+         U getPressureVal
+         U GPIO_INITIALIZATION
+00000000 T main
+00000000 B pressure
+         U Set_Alarm_actuator
+00000000 D threshold
+############Driver.c Symbols###########
+00000000 T Delay
+00000020 T getPressureVal
+00000074 T GPIO_INITIALIZATION
+00000038 T Set_Alarm_actuator
+############all symbols###########
+02000008 B _E_bss
+02000004 D _E_data
+080001bc T _E_text
+02000004 B _S_bss
+02000000 D _S_data
+02001008 B _stack_pointer
+080001b0 T Default_Handler
+08000010 T Delay
+08000030 T getPressureVal
+08000084 T GPIO_INITIALIZATION
+080001b0 W H_fault_Handler
+080000d4 T main
+080001b0 W NMI_Handler
+02000004 B pressure
+08000118 T reset_Handler
+08000048 T Set_Alarm_actuator
+02000000 D threshold
+08000000 T vectors
+############Reading the .elf image (-a to execute them all)###########
+############The symbols table###########
+
+Symbol table '.symtab' contains 48 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 08000000     0 SECTION LOCAL  DEFAULT    1 
+     2: 02000000     0 SECTION LOCAL  DEFAULT    2 
+     3: 02000004     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000     0 SECTION LOCAL  DEFAULT    6 
+     7: 00000000     0 SECTION LOCAL  DEFAULT    7 
+     8: 00000000     0 SECTION LOCAL  DEFAULT    8 
+     9: 00000000     0 SECTION LOCAL  DEFAULT    9 
+    10: 00000000     0 SECTION LOCAL  DEFAULT   10 
+    11: 00000000     0 SECTION LOCAL  DEFAULT   11 
+    12: 00000000     0 SECTION LOCAL  DEFAULT   12 
+    13: 00000000     0 FILE    LOCAL  DEFAULT  ABS startup.c
+    14: 08000000     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    15: 08000118     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    16: 0800019c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    17: 080001b0     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    18: 00000000     0 FILE    LOCAL  DEFAULT  ABS driver.c
+    19: 08000010     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    20: 08000044     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    21: 08000048     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    22: 08000080     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    23: 08000084     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    24: 080000c8     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    25: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+    26: 02000000     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    27: 02000004     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    28: 080000d4     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    29: 08000110     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    30: 02001008     0 NOTYPE  GLOBAL DEFAULT    3 _stack_pointer
+    31: 02000000     4 OBJECT  GLOBAL DEFAULT    2 threshold
+    32: 08000085    80 FUNC    GLOBAL DEFAULT    1 GPIO_INITIALIZATION
+    33: 080001b1    12 FUNC    WEAK   DEFAULT    1 NMI_Handler
+    34: 02000004     0 NOTYPE  GLOBAL DEFAULT    2 _E_data
+    35: 02000000     0 NOTYPE  GLOBAL DEFAULT    2 _S_data
+    36: 02000008     0 NOTYPE  GLOBAL DEFAULT    3 _E_bss
+    37: 02000004     4 OBJECT  GLOBAL DEFAULT    3 pressure
+    38: 08000031    24 FUNC    GLOBAL DEFAULT    1 getPressureVal
+    39: 080001b1    12 FUNC    GLOBAL DEFAULT    1 Default_Handler
+    40: 02000004     0 NOTYPE  GLOBAL DEFAULT    3 _S_bss
+    41: 08000119   152 FUNC    GLOBAL DEFAULT    1 reset_Handler
+    42: 080001b1    12 FUNC    WEAK   DEFAULT    1 H_fault_Handler
+    43: 08000049    60 FUNC    GLOBAL DEFAULT    1 Set_Alarm_actuator
+    44: 080000d5    68 FUNC    GLOBAL DEFAULT    1 main
+    45: 08000011    32 FUNC    GLOBAL DEFAULT    1 Delay
+    46: 080001bc     0 NOTYPE  GLOBAL DEFAULT    1 _E_text
+    47: 08000000    16 OBJECT  GLOBAL DEFAULT    1 vectors
