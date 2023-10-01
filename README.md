@@ -27,8 +27,8 @@ This repository contains resources for the Embedded Systems Diploma, instructed 
  2. System Architecture UML Diagram
  3. System Architectur Design sequence
 - #### Unit 5: First Term Projects
-  1. [https://github.com/aliemadabdo/Embedded-Practice/tree/main/5-%20First%20term%20Projects/Pressure_Control](Pressure Controller)
-  2. [https://github.com/aliemadabdo/Embedded-Practice/tree/main/5-%20First%20term%20Projects/Students_Database](Students data base)
+  1. [Pressure Controller](https://github.com/aliemadabdo/Embedded-Practice/tree/main/5-%20First%20term%20Projects/Pressure_Control)
+  2. [Students data base](https://github.com/aliemadabdo/Embedded-Practice/tree/main/5-%20First%20term%20Projects/Students_Database)
 
 ### Second Term
  
