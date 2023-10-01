@@ -59,4 +59,4 @@ Addressed issues and errors.
 ## Conclusion
 This project report details the design and development of a pressure control system for high-hill climbing cars. It encompasses project overview, requirements, system analysis, design, coding, and more. A valuable resource for embedded system development.
 
-For full details, see the [complete project report](link-to-complete-report).
+For full details, see the [complete project report]([link-to-complete-report](https://github.com/aliemadabdo/Embedded-Practice/blob/main/5-%20First%20term%20Projects/Pressure_Control/Documentaion/Pressure_Controller.pdf).
