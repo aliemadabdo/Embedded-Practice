@@ -37,8 +37,8 @@ characters that come after ".vectors" in the section name.
 
 MEMORY
 {
-flash(RX): ORIGIN = 0x08000000, LENGTH = 128K
-sram(RWX): ORIGIN = 0x02000000, LENGTH = 20K
+flash(RX): ORIGIN = 0x08000000, LENGTH = 128K // 0x00000000 to 0x08000000 are reserved for boot setup and pins 
+sram(RWX): ORIGIN = 0x20000000, LENGTH = 20K
 }
 
 SECTIONS
