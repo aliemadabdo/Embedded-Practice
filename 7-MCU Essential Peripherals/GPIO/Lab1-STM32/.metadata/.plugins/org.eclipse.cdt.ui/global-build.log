@@ -1,0 +1,15 @@
+19:39:26 **** Incremental Build of configuration Debug for project STM32f103c6_GPIO ****
+make all 
+make: Nothing to be done for 'all'.
+19:43:35 **** Rebuild of configuration Debug for project STM32F103c6_GPIO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\STM32F103c6_GPIO.o" "..\\src\\STM32F103c6_GPIO.c" 
+gcc -o STM32F103c6_GPIO.exe "src\\STM32F103c6_GPIO.o" 
+Info: Nothing to build for STM32F103c6_GPIO
+Info: Nothing to build for STM32F103c6_GPIO
+19:55:58 **** Rebuild of configuration Debug for project STM32F103c6_GPIO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\STM32F103c6_GPIO.o" "..\\src\\STM32F103c6_GPIO.c" 
+gcc -o STM32F103c6_GPIO.exe "src\\STM32F103c6_GPIO.o" 
+Info: Nothing to build for STM32F103c6_GPIO
+Info: Nothing to build for STM32F103c6_GPIO
